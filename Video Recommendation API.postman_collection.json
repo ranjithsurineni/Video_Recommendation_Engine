@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "1fd9eea5-8fcb-44ee-aa4d-c44ba488090e",
+		"name": "Video Recommendation API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32257163"
+	},
+	"item": [
+		{
+			"name": "Get Personalized Feed",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Category-Specific Feed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/feed?myusername=test_user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"feed"
+							],
+							"query": [
+								{
+									"key": "myusername",
+									"value": "test_user"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Tue, 18 Feb 2025 18:21:24 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "94"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"query\",\n                \"username\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/feed?username=test_user&category_id=1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed?username=test_user&category_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test_user"
+						},
+						{
+							"key": "category_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Viewed Posts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
